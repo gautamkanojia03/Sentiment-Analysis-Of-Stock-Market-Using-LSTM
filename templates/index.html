@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Sentiment Analysis</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        label, input, p {
+            margin: 0.5em 0;
+            display: block;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 0.5em 2em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Sentiment Analysis</h1>
+        <form method="POST">
+            <label for="headline">Enter News Headline:</label>
+            <input type="text" id="headline" name="headline">
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if result %}
+            <h2>Results:</h2>
+            <p>{{ result.sentiment }}</p>
+            <p>{{ result.stock_action }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
