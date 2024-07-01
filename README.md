@@ -1,1 +1,1 @@
-#Sentiment analysis of Stock market using LSTM
+# Sentiment analysis of Stock market using LSTM
